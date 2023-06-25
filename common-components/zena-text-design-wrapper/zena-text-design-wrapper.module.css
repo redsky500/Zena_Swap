@@ -1,0 +1,58 @@
+@import url("../../public/fonts/DM-Sans/DmSans.css");
+
+.zenaTextDesignWrapper {
+  position: relative;
+  margin: 0 5px;
+}
+.zenaTextDesignWrapper::before {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid #d99278;
+}
+.zenaTextDesignWrapper::after {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ff0fbc;
+}
+
+.text {
+  padding: 5px;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(
+    102.86deg,
+    #cac85d -21.17%,
+    #ff0fbc 91.6%
+  );
+  background: -webkit-linear-gradient(102.86deg, #cac85d -21.17%, #ff0fbc 91.6%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'DM-Sans-Bold' !important;;
+}
+.text::before {
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid #d99278;
+}
+.text::after {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ff0fbc;
+}

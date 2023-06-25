@@ -6,12 +6,16 @@ import Vote from "./vote";
 import Rewards from "./rewards";
 import Whitelist from "./whitelist";
 import Bribe from "./bribe/create";
+import Landing from "./landing";
 
 import { useRouter } from "next/router";
 
 function Route({ changeTheme, ...props }) {
   const router = useRouter();
   const activePath = router.asPath;
+  if (activePath.includes("/landing")) {
+    return <Landing props={props} changeTheme={changeTheme} />;
+  }
   if (activePath.includes("/swap")) {
     return <Swap props={props} changeTheme={changeTheme} />;
   } else if (activePath.includes("/liquidity")) {
