@@ -1,0 +1,22 @@
+@import url("../../public/fonts/DM-Sans/DmSans.css");
+
+.toggleButtonWrapper {
+  padding: 3px;
+  background: #130d37;
+}
+.toggleButton {
+  border-radius: 8px !important;
+  padding: 15px 30px !important;
+  font-family: "DM-Sans-Bold" !important;
+  font-weight: 700 !important;
+  font-size: 25px !important;
+  line-height: 40.78px !important;
+  text-align: center;
+}
+.selectedTab {
+  background: linear-gradient(
+    102.86deg,
+    #cac85d -21.17%,
+    #ff0fbc 91.6%
+  ) !important;
+}

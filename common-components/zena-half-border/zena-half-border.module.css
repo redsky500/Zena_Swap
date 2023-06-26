@@ -8,6 +8,16 @@
   border-radius: 40px;
 }
 
+.bigBorderWrapper {
+  border-width: 2px;
+  border-style: solid;
+  border-image: url("../../public/images/border-image.png") 16% round;
+  border-image-width: 7%;
+  width: auto;
+  background: #130d37;
+  border-radius: 20px;
+}
+
 .cardWrapper {
   padding: 20px 23px;
 }
