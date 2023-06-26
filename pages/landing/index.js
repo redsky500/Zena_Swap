@@ -94,7 +94,12 @@ function Landing({ changeTheme }) {
         </div>
         <div className={classes.cardWrapper}>
           {cardItems.map((card) => {
-            return <ZenaHalfBorder key={card.title} card={cardUI(card.title, card.value)} />;
+            return (
+              <ZenaHalfBorder
+                key={card.title}
+                card={cardUI(card.title, card.value)}
+              />
+            );
           })}
         </div>
       </div>
@@ -117,7 +122,7 @@ function Landing({ changeTheme }) {
               />
             </div>
           </Grid>
-          <Grid item lg={5} md={5} sm={12} xs={12}>
+          <Grid item lg={6} md={6} sm={12} xs={12}>
             <div className={classes.marginBottom20}>
               <Typography variant="h1" className={classes.investingHeading}>
                 <span>Investing In</span>
@@ -214,6 +219,26 @@ function Landing({ changeTheme }) {
           </Grid>
         </Grid>
       </div>
+      {/* Landing Footer */}
+      <div className={classes.contentContainerFullFive}>
+        <img src="/images/zena-logo.svg" />
+        <div className={classes.socialLinkWrapper}>
+          <img src="/images/telegram-logo.png" />
+          <img src="/images/twitter-logo.png" />
+          <img src="/images/facebook-logo.png" />
+          <img src="/images/discord-logo.png" />
+          <img src="/images/insta-logo.png" />
+        </div>
+        <div className={classes.footerDescription}>
+          <Typography variant="body1" className={`${classes.getReadyDescription} ${classes.alignItemCenter}`}>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit.
+          </Typography>
+        </div>
+      </div>
+
+      {/* final image */}
+      <div className={classes.lastBackgroundImageWrapper}></div>
     </div>
   );
 }
