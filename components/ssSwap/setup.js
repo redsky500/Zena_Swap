@@ -635,8 +635,8 @@ function AssetSelect({ type, value, assetOptions, onSelect }) {
               filteredAssetOptions ? filteredAssetOptions.sort((a, b) => {
                 if(BigNumber(a.balance).lt(b.balance)) return 1;
                 if(BigNumber(a.balance).gt(b.balance)) return -1;
-                if(a.symbol.toLowerCase()<b.symbol.toLowerCase()) return -1;
-                if(a.symbol.toLowerCase()>b.symbol.toLowerCase()) return 1;
+                if(a?.symbol?.toLowerCase()<b?.symbol?.toLowerCase()) return -1;
+                if(a?.symbol?.toLowerCase()>b?.symbol?.toLowerCase()) return 1;
                 return 0;
               }).map((asset, idx) => {
                 return renderAssetOption(type, asset, idx)

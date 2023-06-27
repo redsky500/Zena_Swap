@@ -1,0 +1,175 @@
+/* Application Main CSS Starts */
+.navigationContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background: rgb(33, 43, 72); */
+  background: transparent;
+  border-radius: 12px;
+  border: 0 !important;
+  padding: 3px;
+}
+
+.navigationHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+a.linkz {
+  cursor: pointer !important;
+}
+
+.appLogo {
+  transform: scale(6);
+  position: fixed;
+  left: 100px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.navigationContent {
+  width: 100%;
+}
+
+.navToggles {
+  min-height: 50px;
+}
+
+.navButton {
+  border-radius: 10px !important;
+  padding: 8px 24px 10px 24px !important;
+  text-transform: capitalize !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+  color: #7e99b0 !important;
+} /* Transparent border to eliminate position jittering from Active state */
+
+.testChange {
+  color: #f33ca5 !important;
+  background: none !important;
+  padding: 8px 24px 8px 24px !important;
+}
+
+.testChange::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: "";
+  width: 30px;
+  height: 65%;
+  border-top: 2px solid #f33ca5;
+  border-bottom: 2px solid #f33ca5;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.subtitleText {
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+/* Application Main CSS ends */
+
+.telegram {
+  background-image: url("/socials/telegram.svg");
+}
+.medium {
+  background-image: url("/socials/medium.svg");
+}
+.twitter {
+  background-image: url("/socials/twitter.svg");
+}
+.github {
+  background-image: url("/socials/github.svg");
+}
+.discord {
+  background-image: url("/socials/discord.svg");
+}
+.metamask {
+  background-image: url("/connectors/icn-metamask.svg");
+}
+.ledger {
+  background-image: url("/connectors/icn-ledger.svg");
+}
+.coinbase {
+  background-image: url("/connectors/coinbaseWalletIcon.svg");
+}
+.torus {
+  background-image: url("/connectors/torus.jpg");
+}
+.trust {
+  background-image: url("/connectors/trustWallet.png");
+}
+
+@media screen and (max-width: 1200px) {
+  .navigationContainer {
+    position: fixed;
+    min-height: 60px;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0px !important;
+    border-radius: 0px !important;
+    z-index: 10020;
+    background: #111729;
+  }
+  .navigationHeading {
+    width: 100%;
+    display: block;
+  }
+  .navigationContent {
+    /* display: none; */
+    background: #111729;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(126, 153, 176, 0.2);
+  }
+  .subtitleText {
+    padding-left: 0px;
+    font-size: 15px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .navToggles {
+    min-height: 30px;
+  }
+  .navButton {
+    border-radius: 10px !important;
+    padding: 8px 10px 8px 10px !important;
+    text-transform: capitalize !important;
+    border: 1px solid rgba(0, 0, 0, 0) !important;
+    color: #7e99b0 !important;
+  }
+  .subtitleText {
+    padding-left: 0px;
+    font-size: 12px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .appLogo {
+    transform: scale(5);
+    position: fixed;
+    left: 70px;
+    top: 18px;
+    cursor: pointer;
+  }
+  .navigationContent {
+    background: #111729;
+    position: fixed;
+    left: 0;
+    top: 45px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(126, 153, 176, 0.2);
+  }
+}

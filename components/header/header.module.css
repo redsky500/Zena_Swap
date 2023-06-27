@@ -40,7 +40,7 @@
 .appLogo {
   transform: scale(6);
   position: fixed;
-  left: 100px;
+  left: 200px;
   top: 30px;
   cursor: pointer;
 }
@@ -53,7 +53,7 @@
 .version {
   position: absolute;
   top: 12px;
-  left: 10px;
+  left: 110px;
   color: #fff !important;
   font-size: 10px !important;
 }

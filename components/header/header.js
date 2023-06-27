@@ -21,6 +21,7 @@ import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceW
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 
 import Navigation from "../navigation";
+import ZenaNavigation from "../../common-components/zena-navigation";
 import Unlock from "../unlock";
 import TransactionQueue from "../transactionQueue";
 
@@ -345,7 +346,8 @@ function Header(props) {
           <Typography className={classes.version}>version 0.0.30</Typography>
         </div>
 
-        <Navigation changeTheme={props.changeTheme} />
+        {/* <Navigation changeTheme={props.changeTheme} /> */}
+        <ZenaNavigation changeTheme={props.changeTheme} />
 
         <div
           style={{

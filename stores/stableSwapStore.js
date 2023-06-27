@@ -179,7 +179,7 @@ class Store {
       if (!ass) {
         return false
       }
-      return ass.address.toLowerCase() === address.toLowerCase()
+      return ass?.address?.toLowerCase() === address?.toLowerCase()
     })
 
     if (!theAsset || theAsset.length === 0) {
@@ -320,7 +320,7 @@ class Store {
 
       const pairs = this.getStore('pairs')
       let thePair = pairs.filter((pair) => {
-        return (pair.address.toLowerCase() == pairAddress.toLowerCase())
+        return (pair?.address?.toLowerCase() == pairAddress?.toLowerCase())
       })
 
       if(thePair.length > 0) {
@@ -479,8 +479,8 @@ class Store {
 
     const pairs = this.getStore('pairs')
     let thePair = pairs.filter((pair) => {
-      return ((pair.token0.address.toLowerCase() == addressA.toLowerCase() && pair.token1.address.toLowerCase() == addressB.toLowerCase() && pair.isStable == stab) ||
-      (pair.token0.address.toLowerCase() == addressB.toLowerCase() && pair.token1.address.toLowerCase() == addressA.toLowerCase() && pair.isStable == stab))
+      return ((pair?.token0?.address?.toLowerCase() == addressA?.toLowerCase() && pair?.token1?.address?.toLowerCase() == addressB?.toLowerCase() && pair.isStable == stab) ||
+      (pair?.token0?.address?.toLowerCase() == addressB?.toLowerCase() && pair?.token1?.address?.toLowerCase() == addressA?.toLowerCase() && pair.isStable == stab))
     })
     if(thePair.length > 0) {
 
@@ -628,14 +628,14 @@ class Store {
         localBaseAssets = JSON.parse(localBaseAssetsString)
 
         localBaseAssets = localBaseAssets.filter(function( obj ) {
-          return obj.address.toLowerCase() !== asset.address.toLowerCase()
+          return obj?.address?.toLowerCase() !== asset?.address?.toLowerCase()
         })
 
         localStorage.setItem('stableSwap-assets', JSON.stringify(localBaseAssets))
 
         let baseAssets = this.getStore('baseAssets')
         baseAssets = baseAssets.filter(function( obj ) {
-          return obj.address.toLowerCase() !== asset.address.toLowerCase() && asset.local === true
+          return obj?.address?.toLowerCase() !== asset?.address?.toLowerCase() && asset.local === true
         })
 
         this.setStore({ baseAssets: baseAssets })
@@ -668,7 +668,7 @@ class Store {
       const baseAssets = this.getStore('baseAssets')
 
       const theBaseAsset = baseAssets.filter((as) => {
-        return as.address.toLowerCase() === address.toLowerCase()
+        return as?.address?.toLowerCase() === address?.toLowerCase()
       })
       if(theBaseAsset.length > 0) {
         return theBaseAsset[0]
@@ -1103,7 +1103,7 @@ class Store {
       }
 
       const theBaseAsset = localBaseAssets.filter((as) => {
-        return as.address.toLowerCase() === payload.content.address.toLowerCase()
+        return as?.address?.toLowerCase() === payload?.content?.address?.toLowerCase()
       })
       if(theBaseAsset.length > 0) {
         this.emitter.emit(ACTIONS.ASSET_SEARCHED, theBaseAsset)
@@ -2733,7 +2733,7 @@ class Store {
       }
 
       const includesRouteAddress = routeAssets.filter((asset) => {
-        return (asset.address.toLowerCase() == addy0.toLowerCase() || asset.address.toLowerCase() == addy1.toLowerCase())
+        return (asset?.address?.toLowerCase() == addy0?.toLowerCase() || asset?.address?.toLowerCase() == addy1?.toLowerCase())
       })
 
       let amountOuts = []
@@ -3019,7 +3019,7 @@ class Store {
 
       const ba = await Promise.all(
         baseAssets.map(async (asset) => {
-          if(asset.address.toLowerCase() === assetAddress.toLowerCase()) {
+          if(asset?.address.toLowerCase() === assetAddress?.toLowerCase()) {
             if(asset.address === 'FTM') {
               let bal = await web3.eth.getBalance(account.address)
               asset.balance = BigNumber(bal).div(10 ** asset.decimals).toFixed(asset.decimals)
