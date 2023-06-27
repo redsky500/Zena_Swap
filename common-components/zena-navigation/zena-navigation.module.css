@@ -24,8 +24,8 @@ a.linkz {
 .appLogo {
   transform: scale(6);
   position: fixed;
-  left: 100px;
-  top: 30px;
+  left: 190px;
+  top: 45px;
   cursor: pointer;
 }
 

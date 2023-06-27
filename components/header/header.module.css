@@ -37,12 +37,14 @@
   color: #06D3D7 !important;
 }
 
-.appLogo {
+.appLogo {  
   transform: scale(6);
   position: fixed;
-  left: 200px;
-  top: 30px;
+  left: 190px;
+  top: 45px;
   cursor: pointer;
+  width: 20px;
+  height: auto;
 }
 
 .logoContainer {
