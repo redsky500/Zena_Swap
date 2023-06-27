@@ -149,6 +149,9 @@ a.linkz {
     border: 1px solid rgba(0, 0, 0, 0) !important;
     color: #7e99b0 !important;
   }
+  .testChange {
+    color: #f33ca5 !important;
+  }
   .subtitleText {
     padding-left: 0px;
     font-size: 12px !important;
@@ -171,5 +174,9 @@ a.linkz {
     text-align: center;
     padding: 15px 0;
     border-bottom: 1px solid rgba(126, 153, 176, 0.2);
+  }
+  .testChange::before {
+    top: 5px;
+    height: 70%;
   }
 }
