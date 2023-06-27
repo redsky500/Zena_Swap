@@ -15,7 +15,6 @@
 
 .cardContentWrapper {
   padding: 20px 23px;
-  min-width: 358px;
   text-align: center;
 }
 
@@ -24,6 +23,7 @@
   font-size: 18px;
   line-height: 23.44px;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .cardValue {
@@ -90,6 +90,7 @@
   font-size: 17px !important;
   line-height: 27px !important;
   font-family: "DM-Sans-Light" !important;
+  text-transform: capitalize !important;
 }
 
 /* Investing Part */
@@ -151,6 +152,7 @@
   font-family: "DM-Sans-Light" !important;
   font-size: 24px !important;
   line-height: 38.4px !important;
+  text-transform: capitalize !important;
 }
 
 /* Meet With Our Team */
@@ -192,7 +194,6 @@
 }
 
 .gridWrapper {
-  width: calc(100% - 300px) !important;
   margin: auto;
 }
 
@@ -200,6 +201,8 @@
   display: flex;
   padding: 30px 50px;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .getReadyTitle {
@@ -209,6 +212,7 @@
   line-height: 88px !important;
   letter-spacing: 0em !important;
   text-align: left !important;
+  text-transform: capitalize;
 }
 
 .getReady {
@@ -231,6 +235,7 @@
   text-align: left !important;
   color: #b3b3b4;
   width: 600px;
+  text-transform: capitalize;
 }
 
 .cardTitle {
@@ -239,18 +244,25 @@
 
 .buttonWrapper {
   flex: 1 1 auto;
+  text-align: right;
 }
 
 /* Footer */
 .contentContainerFullFive {
   margin-top: 100px;
   text-align: center;
+  padding: 25px;
+}
+
+.zenaImageLogo {
+  width: 90%;
+  max-width: 574px;
 }
 
 .socialLinkWrapper {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 3em;
   margin-top: 20px;
 }
 
@@ -273,4 +285,52 @@
   background-size: cover;
   background-position: center;
   margin-top: 70px;
+}
+
+@media screen and (max-width: 1200px) {
+  .bigCardWrapper {
+    padding: 15px 30px;
+  }
+  .getReadyTitle {
+    font-size: 40px !important;
+    line-height: 60px !important;
+  }
+  .getReadyDescription {
+    font-size: 15px !important;
+    width: calc(500px - 100px);
+    line-height: 25px !important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  /* for all the section's padding */
+  .contentContainerFullTwo,
+  .contentContainerFullThree,
+  .contentContainerFullFourth,
+  .contentContainerFullFive {
+    padding: 20px 20px;
+    margin-top: 50px;
+  }
+
+  .cardBackground {
+    height: 81px;
+  }
+
+  .getReadyTitle {
+    font-size: 6vw !important;
+  }
+
+  .getReadyDescription {
+    font-size: 3vw !important;
+    width: auto;
+  }
+
+  .socialLinkWrapper {
+    gap: 1em;
+  }
+
+  .socialLinkWrapper > img {
+    width: calc(55px - 10px);
+    height: calc(55px - 10px);
+  }
 }

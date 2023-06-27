@@ -76,7 +76,7 @@ function Landing({ changeTheme }) {
               variant="h1"
               className={`${classes.heading} ${classes.lineHeight100}`}
             >
-              <span>BNB chain</span>
+              <span>BNB Chain</span>
             </Typography>
           </div>
           <div
@@ -155,7 +155,7 @@ function Landing({ changeTheme }) {
         <Grid container className={classes.meetWrapper}>
           <div className={classes.meetTitle}>
             <Typography variant="h1" className={classes.heading}>
-              <span>Meet with our</span>
+              <span>Meet With Our</span>
             </Typography>
             <Typography variant="h1" className={classes.heading}>
               <ZenaTextDesignWrapper text={"Team"} fontSize={"75px"} />
@@ -221,7 +221,7 @@ function Landing({ changeTheme }) {
       </div>
       {/* Landing Footer */}
       <div className={classes.contentContainerFullFive}>
-        <img src="/images/zena-logo.svg" />
+        <img src="/images/zena-logo.svg" className={classes.zenaImageLogo} />
         <div className={classes.socialLinkWrapper}>
           <img src="/images/telegram-logo.png" />
           <img src="/images/twitter-logo.png" />

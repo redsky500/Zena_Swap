@@ -45,7 +45,30 @@
   line-height: 29px !important;
   letter-spacing: 0em;
   text-align: center;
+  text-transform: capitalize;
 }
 .margin10 {
   margin: 10px 0;
+}
+
+@media screen and (max-width: 560px) {
+  .cardBackground {
+    height: 80px;
+  }
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+  .title {
+    font-size: 25px !important;
+    line-height: 25px !important;
+    margin: 8px;
+  }
+  .subTitle {
+    font-size: 18px !important;
+  }
+  .description {
+    font-size: 15px !important;
+    line-height: 25px !important;
+  }
 }

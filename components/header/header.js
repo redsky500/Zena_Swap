@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
 import {
   Typography,
   Switch,
@@ -341,9 +340,10 @@ function Header(props) {
       <div className={classes.headerContainer}>
         <div className={classes.logoContainer}>
           <a onClick={() => router.push("/home")}>
-            <SiteLogo className={classes.appLogo} />
+            {/* <SiteLogo className={classes.appLogo} /> */}
+            <img src="/images/zena-logo.svg" className={classes.appLogo} />
           </a>
-          <Typography className={classes.version}>version 0.0.30</Typography>
+          {/* <Typography className={classes.version}>version 0.0.30</Typography> */}
         </div>
 
         {/* <Navigation changeTheme={props.changeTheme} /> */}

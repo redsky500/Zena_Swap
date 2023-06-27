@@ -182,8 +182,8 @@ function ZenaNavigation(props) {
         onChange={onActiveClick}
         className={classes.navToggles}
       >
-        {renderSubNav("Landing", "landing")}
-        {renderSubNav("Home", "home")}
+        {renderSubNav("Home", "landing")}
+        {/* {renderSubNav("Home", "home")} */}
         {renderSubNav("Swap", "swap")}
         {renderSubNav("Liquidity", "liquidity")}
         {renderSubNav("Vest", "vest")}
