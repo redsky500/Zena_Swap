@@ -47,17 +47,7 @@ function Landing({ changeTheme }) {
         "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     },
   ]);
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-
-  useEffect(() => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, []);
+  const windowSize = useWindowSize();
 
   const handleSwapNow = () => {
     console.log("test");
@@ -84,7 +74,13 @@ function Landing({ changeTheme }) {
                   <span>The</span>
                   <ZenaTextDesignWrapper
                     text={"Native DEX"}
-                    fontSize={windowSize.width >= 1200 ? "75px" : "40px"}
+                    fontSize={
+                      windowSize.width >= 1200
+                        ? "75px"
+                        : windowSize.width >= 395
+                        ? "40px"
+                        : "35px"
+                    }
                   />
                   <span>of</span>
                 </Typography>
@@ -303,3 +299,24 @@ function Landing({ changeTheme }) {
 }
 
 export default Landing;
+
+//  custom hook
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
+};
