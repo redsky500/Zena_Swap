@@ -6,6 +6,7 @@
   width: fit-content;
   background: #130d37;
   border-radius: 40px;
+  min-width: 300px;
 }
 
 .bigBorderWrapper {
@@ -20,4 +21,10 @@
 
 .cardWrapper {
   padding: 20px 23px;
+}
+
+@media screen and (max-width: 1200px) {
+  .borderWrapper {
+    min-width: 280px;
+  }
 }

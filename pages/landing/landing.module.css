@@ -7,10 +7,9 @@
   gap: 50px;
   flex-wrap: wrap;
   padding: 15px 48px;
-  position: absolute;
-  left: 0;
-  top: 80%;
   width: 100%;
+  position: absolute;
+  bottom: -90px;
 }
 
 .cardContentWrapper {
@@ -48,7 +47,10 @@
 
 /* Landing page */
 .contentContainerFull {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 150vh;
   width: 100%;
   position: relative;
   background-image: url("../../public/images/landing-image.png");
@@ -60,10 +62,10 @@
 }
 
 .landingTextWrapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-90%, -80%);
+  position: relative;
+  bottom: 50%;
+  right: 45%;
+  transform: translate(50%, 50%);
   padding: 15px;
 }
 
@@ -120,7 +122,6 @@
 }
 
 .investingWrapper {
-  /* width: calc(100% - 150px) !important; */
   margin: 100px auto 0 !important;
   justify-content: center;
 }
@@ -323,6 +324,24 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .marginBottom20 {
+    margin-bottom: 10px;
+  }
+  .marginBottom20 > .heading {
+    font-size: 40px !important;
+  }
+  .lineHeight100 {
+    line-height: 60px !important;
+  }
+  .mainDescription {
+    font-size: 14px !important;
+  }
+  .contentContainerFull > .investingWrapper {
+    margin: 0 auto 0 !important;
+  }
+  .contentContainerFull > .cardWrapper {
+    gap: 10px;
+  }
   .bigCardWrapper {
     padding: 15px 30px;
   }
@@ -334,6 +353,16 @@
     font-size: 15px !important;
     width: calc(500px - 100px);
     line-height: 25px !important;
+  }
+}
+
+@media screen and (max-width: 1061px) {
+  .cardTitle {
+    font-size: 14px;
+  }
+  .cardValue {
+    font-size: 30px;
+    line-height: 40px;
   }
 }
 
