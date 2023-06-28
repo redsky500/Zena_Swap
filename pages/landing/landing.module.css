@@ -42,7 +42,7 @@
 .ffContainer {
   height: 100%;
   width: auto;
-  margin-top: 0px;
+  margin-top: 0;
   position: relative;
 }
 
@@ -71,6 +71,10 @@
   margin-bottom: 20px;
 }
 
+.marginLeft10 {
+  margin-left: -10px;
+}
+
 .heading {
   display: flex;
   font-family: "DM-Sans-Bold" !important;
@@ -95,7 +99,7 @@
 
 /* Investing Part */
 .contentContainerFullTwo {
-  margin-top: 200px;
+  margin-top: 100px;
   padding: 20px 50px;
   height: auto;
   width: 100%;
@@ -111,7 +115,7 @@
 .TabWrapper {
   display: flex;
   justify-content: center;
-  z-index: 9999;
+  z-index: 1;
   position: relative;
 }
 
@@ -287,6 +291,37 @@
   margin-top: 70px;
 }
 
+@media screen and (max-width: 1420px) {
+  .investingWrapper {
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .groupImages {
+    height: 450px;
+  }
+
+  .investingImage {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .coinImage {
+    top: 0;
+    left: 50%;
+    transform: translate(-36%, 21%);
+  }
+  .gridImageWrapper {
+    max-width: 100% !important;
+  }
+  .investDescription {
+    width: 600px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .bigCardWrapper {
     padding: 15px 30px;
@@ -302,6 +337,47 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .investingHeading {
+    font-size: 50px !important;
+  }
+  .investDescription {
+    font-size: 20px !important;
+    line-height: 30px !important;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .groupImages {
+    height: 290px;
+  }
+
+  .investingWrapper {
+    margin: 50px auto 0 !important;
+    overflow: hidden;
+  }
+
+  .investingImage {
+    width: 500px;
+  }
+
+  .coinImage {
+    width: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+  }
+
+  .meetTitle {
+    margin: 20px 0;
+    gap: 7px;
+  }
+  .meetTitle > .heading {
+    font-size: 40px !important;
+  }
+}
+
 @media screen and (max-width: 560px) {
   /* for all the section's padding */
   .contentContainerFullTwo,
@@ -310,6 +386,24 @@
   .contentContainerFullFive {
     padding: 20px 20px;
     margin-top: 50px;
+  }
+
+  .investingHeading {
+    font-size: 30px !important;
+    justify-content: center;
+  }
+
+  .investDescription {
+    font-size: 15px !important;
+    line-height: 25px !important;
+  }
+
+  .startStakingButton {
+    text-align: center;
+  }
+
+  .meetWrapper {
+    margin-top: 0;
   }
 
   .cardBackground {
