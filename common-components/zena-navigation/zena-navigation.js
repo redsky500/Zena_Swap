@@ -212,7 +212,8 @@ function ZenaNavigation(props) {
     <div className={classes.navigationContainer}>
       <div className={classes.navigationHeading}>
         <a onClick={() => router.push("/home")} className={classes.linkz}>
-          <SiteLogo className={classes.appLogo} />
+          {/* <SiteLogo className={classes.appLogo} /> */}
+          <img src="/images/zena-logo.svg" className={classes.appLogo} />
         </a>
       </div>
 

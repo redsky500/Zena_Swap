@@ -21,6 +21,7 @@ import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 
 import Navigation from "../navigation";
 import ZenaNavigation from "../../common-components/zena-navigation";
+import ZenaButton from "../../common-components/zena-button";
 import Unlock from "../unlock";
 import TransactionQueue from "../transactionQueue";
 
@@ -443,26 +444,40 @@ function Header(props) {
               </StyledMenu>
             </div>
           ) : (
-            <Button
-              disableElevation
-              className={classes.accountButton}
-              variant="contained"
-              color={
-                props.theme.palette.type === "dark" ? "primary" : "secondary"
-              }
-              onClick={onAddressClicked}
-            >
-              {account && account.address && (
-                <div
-                  className={`${classes.accountIcon} ${classes.metamask}`}
-                ></div>
-              )}
-              <Typography className={classes.headBtnTxt}>
-                {account && account.address
-                  ? formatAddress(account.address)
-                  : "Connect Wallet"}
-              </Typography>
-            </Button>
+            <div className={`${classes.accountButton} ${classes.manageLink}`}>
+              <div className={classes.socialLinkWrapper}>
+                <img src="/images/telegram-logo.png" />
+                <img src="/images/twitter-logo.png" />
+              </div>
+              <ZenaButton
+                buttonText={
+                  account && account.address
+                    ? formatAddress(account.address)
+                    : "Connect Wallet"
+                }
+                buttonEvent={onAddressClicked}
+              />
+            </div>
+            // <Button
+            //   disableElevation
+            //   className={classes.accountButton}
+            //   variant="contained"
+            //   color={
+            //     props.theme.palette.type === "dark" ? "primary" : "secondary"
+            //   }
+            //   onClick={onAddressClicked}
+            // >
+            //   {account && account.address && (
+            //     <div
+            //       className={`${classes.accountIcon} ${classes.metamask}`}
+            //     ></div>
+            //   )}
+            //   <Typography className={classes.headBtnTxt}>
+            //     {account && account.address
+            //       ? formatAddress(account.address)
+            //       : "Connect Wallet"}
+            //   </Typography>
+            // </Button>
           )}
         </div>
         {unlockOpen && (
