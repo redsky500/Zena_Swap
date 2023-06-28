@@ -10,6 +10,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   z-index: 9;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 button {
   text-transform: none !important;
 }
