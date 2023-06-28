@@ -7,10 +7,10 @@
   gap: 50px;
   flex-wrap: wrap;
   padding: 15px 48px;
-  position: absolute;
-  left: 0;
-  top: 80%;
   width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translate(0, 0%);
 }
 
 .cardContentWrapper {
@@ -48,6 +48,9 @@
 
 /* Landing page */
 .contentContainerFull {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -60,10 +63,10 @@
 }
 
 .landingTextWrapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-90%, -80%);
+  position: relative;
+  bottom: 50%;
+  right: 45%;
+  transform: translate(50%, 60%);
   padding: 15px;
 }
 
@@ -103,6 +106,7 @@
   padding: 20px 50px;
   height: auto;
   width: 100%;
+  overflow: hidden;
 }
 
 .investingHeading {
@@ -120,9 +124,12 @@
 }
 
 .investingWrapper {
-  /* width: calc(100% - 150px) !important; */
   margin: 100px auto 0 !important;
   justify-content: center;
+}
+
+.contentContainerFull > .investingWrapper {
+  margin: 0 !important;
 }
 
 .groupImages {
@@ -164,6 +171,7 @@
   padding: 20px 50px;
   height: auto;
   width: 100%;
+  overflow: hidden;
 }
 
 .meetWrapper {
@@ -195,6 +203,7 @@
   padding: 20px 50px;
   height: auto;
   width: 100%;
+  overflow: hidden;
 }
 
 .gridWrapper {
@@ -256,6 +265,7 @@
   margin-top: 100px;
   text-align: center;
   padding: 25px;
+  overflow: hidden;
 }
 
 .zenaImageLogo {
@@ -291,6 +301,12 @@
   margin-top: 70px;
 }
 
+@media screen and (min-width: 1420px) {
+  .contentContainerFullTwo {
+    padding-bottom: 60px;
+  }
+}
+
 @media screen and (max-width: 1420px) {
   .investingWrapper {
     gap: 10px;
@@ -323,6 +339,30 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .landingTextWrapper {
+    transform: translate(50%, 90%);
+  }
+  .cardWrapper {
+    gap: 10px;
+  }
+  .marginBottom20 {
+    margin-bottom: 10px;
+  }
+  .marginBottom20 > .heading {
+    font-size: 40px !important;
+  }
+  .lineHeight100 {
+    line-height: 60px !important;
+  }
+  .mainDescription {
+    font-size: 14px !important;
+  }
+  .contentContainerFull > .investingWrapper {
+    margin: 0 auto 0 !important;
+  }
+  .contentContainerFull > .cardWrapper {
+    gap: 10px;
+  }
   .bigCardWrapper {
     padding: 15px 30px;
   }
@@ -334,6 +374,29 @@
     font-size: 15px !important;
     width: calc(500px - 100px);
     line-height: 25px !important;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .cardWrapper {
+    transform: translate(0, 50%);
+    padding: 15px 0;
+  }
+  .cardTitle {
+    font-size: 13px;
+  }
+  .cardValue {
+    font-size: 25px;
+    line-height: 26px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardWrapper {
+    transform: translate(0, 20%);
+  }
+  .contentContainerFull {
+    background-position: left;
   }
 }
 
@@ -349,13 +412,23 @@
 }
 
 @media screen and (max-width: 630px) {
+  .contentContainerFull {
+    padding: 0px 0;
+    background-size: cover;
+    width: 100%;
+  }
+  .landingTextWrapper {
+    transform: translate(45%, 90%);
+  }
+  .landingDescription {
+    width: auto;
+  }
   .groupImages {
     height: 290px;
   }
 
   .investingWrapper {
     margin: 50px auto 0 !important;
-    overflow: hidden;
   }
 
   .investingImage {
@@ -373,6 +446,7 @@
     margin: 20px 0;
     gap: 7px;
   }
+
   .meetTitle > .heading {
     font-size: 40px !important;
   }
@@ -386,6 +460,23 @@
   .contentContainerFullFive {
     padding: 20px 20px;
     margin-top: 50px;
+  }
+
+  .cardWrapper {
+    position: static;
+    margin-top: 100px;
+  }
+
+  .cardContentWrapper {
+    padding: 16px 16px;
+  }
+
+  .cardTitle {
+    font-size: 10px;
+  }
+  .cardValue {
+    font-size: 16px;
+    line-height: 20px;
   }
 
   .investingHeading {

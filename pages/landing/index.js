@@ -47,17 +47,7 @@ function Landing({ changeTheme }) {
         "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     },
   ]);
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
-
-  useEffect(() => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, []);
+  const windowSize = useWindowSize();
 
   const handleSwapNow = () => {
     console.log("test");
@@ -76,45 +66,60 @@ function Landing({ changeTheme }) {
     <Grid container className={classes.investingWrapper}>
       <div className={classes.ffContainer}>
         {/* Landing Page */}
-        {/* <div className={classes.contentContainerFull}>
-        <div className={classes.landingTextWrapper}>
-          <div className={classes.marginBottom20}>
-            <Typography variant="h1" className={classes.heading}>
-              <span>The</span>
-              <ZenaTextDesignWrapper text={"Native DEX"} fontSize={"75px"} />
-              <span>of</span>
-            </Typography>
-            <Typography
-              variant="h1"
-              className={`${classes.heading} ${classes.lineHeight100}`}
-            >
-              <span>BNB Chain</span>
-            </Typography>
-          </div>
-          <div
-            className={`${classes.landingDescription} ${classes.marginBottom20}`}
-          >
-            <Typography variant="body1" className={classes.mainDescription}>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam. non deserunt ullamco.
-            </Typography>
-          </div>
-          <div>
-            <ZenaButton buttonText="Swap Now" buttonEvent={handleSwapNow} />
-          </div>
+        <div className={classes.contentContainerFull}>
+          <Grid container className={classes.investingWrapper}>
+            <div className={classes.landingTextWrapper}>
+              <div className={classes.marginBottom20}>
+                <Typography variant="h1" className={classes.heading}>
+                  <span>The</span>
+                  <ZenaTextDesignWrapper
+                    text={"Native DEX"}
+                    fontSize={
+                      windowSize.width >= 1200
+                        ? "75px"
+                        : windowSize.width >= 395
+                        ? "40px"
+                        : "35px"
+                    }
+                  />
+                  <span>of</span>
+                </Typography>
+                <Typography
+                  variant="h1"
+                  className={`${classes.heading} ${classes.lineHeight100}`}
+                >
+                  <span>BNB Chain</span>
+                </Typography>
+              </div>
+              <div
+                className={`${classes.landingDescription} ${classes.marginBottom20}`}
+              >
+                <Typography variant="body1" className={classes.mainDescription}>
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                  Exercitation veniam. non deserunt ullamco.
+                </Typography>
+              </div>
+              <div>
+                <ZenaButton buttonText="Swap Now" buttonEvent={handleSwapNow} />
+              </div>
+            </div>
+          </Grid>
+
+          <Grid container className={classes.investingWrapper}>
+            <div className={classes.cardWrapper}>
+              {cardItems.map((card) => {
+                return (
+                  <ZenaHalfBorder
+                    key={card.title}
+                    card={cardUI(card.title, card.value)}
+                  />
+                );
+              })}
+            </div>
+          </Grid>
         </div>
-        <div className={classes.cardWrapper}>
-          {cardItems.map((card) => {
-            return (
-              <ZenaHalfBorder
-                key={card.title}
-                card={cardUI(card.title, card.value)}
-              />
-            );
-          })}
-        </div>
-      </div> */}
+
         {/* Investing Page */}
         <div className={classes.contentContainerFullTwo}>
           <div className={classes.TabWrapper}>
@@ -149,7 +154,9 @@ function Landing({ changeTheme }) {
               xs={12}
               className={classes.gridImageWrapper}
             >
-              <div className={`${classes.marginBottom20} ${classes.marginLeft10}`}>
+              <div
+                className={`${classes.marginBottom20} ${classes.marginLeft10}`}
+              >
                 <Typography variant="h1" className={classes.investingHeading}>
                   <span>Investing In</span>
                   <ZenaTextDesignWrapper
@@ -188,6 +195,7 @@ function Landing({ changeTheme }) {
             </Grid>
           </Grid>
         </div>
+
         {/* Meet Team Page */}
         <div className={classes.contentContainerFullThree}>
           <Grid container className={classes.meetWrapper}>
@@ -291,3 +299,24 @@ function Landing({ changeTheme }) {
 }
 
 export default Landing;
+
+//  custom hook
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
+};
