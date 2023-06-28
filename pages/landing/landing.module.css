@@ -42,6 +42,7 @@
 .ffContainer {
   height: 100%;
   width: auto;
+  max-width: 1700px;
   margin-top: 0;
   position: relative;
 }
